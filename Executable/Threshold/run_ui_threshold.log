@@ -1,0 +1,289 @@
+[{'callback': <function totals at 0x7fd9074a9940>, 'name': 'all_times', 'is_continue': None}, {'callback': <function constant_times at 0x7fd9074a9b80>, 'name': 'integer_times', 'ts': <function ts_integer at 0x7fd9074a9c10>, 'is_continue': None}, {'callback': <function _is_difference_less at 0x7fd9074af3a0>, 'name': 'difference', 'passive_watcher': {'callback': <function constant_times at 0x7fd9074a9b80>, 'name': 'integer_times', 'ts': <function ts_integer at 0x7fd9074a9c10>, 'is_continue': None}, 'eta': 29, 'compartments': ['i', 'r'], 'is_continue': True, 'out': None}]
+epidemic [ 0 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 2.6122 seconds.
+epidemic [ 1 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 1.7015 seconds.
+epidemic [ 2 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 1.7928 seconds.
+epidemic [ 3 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 1.8950 seconds.
+epidemic [ 4 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 8.1809 seconds.
+epidemic [ 5 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 4.9888 seconds.
+epidemic [ 6 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 4.8065 seconds.
+epidemic [ 7 ]
+         s  e  i  r i0 r0
+0  1000000  1  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 3.8444 seconds.
+epidemic [ 8 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 2.3048 seconds.
+epidemic [ 9 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 1.6457 seconds.
+epidemic [ 10 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 1.8315 seconds.
+epidemic [ 11 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 1.3580 seconds.
+epidemic [ 12 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 7.3668 seconds.
+epidemic [ 13 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 4.8230 seconds.
+epidemic [ 14 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 5.2566 seconds.
+epidemic [ 15 ]
+         s  e  i  r i0 r0
+1  1000000  2  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 4.0589 seconds.
+epidemic [ 16 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 2.4722 seconds.
+epidemic [ 17 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 1.7503 seconds.
+epidemic [ 18 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 1.8037 seconds.
+epidemic [ 19 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.6
+1    e  i0   3.5         4.0   0.4
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 1.3352 seconds.
+epidemic [ 20 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 6.6970 seconds.
+epidemic [ 21 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.3   1.0
+3   i0  r0   5.5         0.3   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 4.6247 seconds.
+epidemic [ 22 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  2.0
+1    s  e        i0  2.0
+The simulation for 5 successful realizations took 5.3764 seconds.
+epidemic [ 23 ]
+         s  e  i  r i0 r0
+2  1000000  3  0  0  0  0
+  from  to  mean  dispersion  prob
+0    e   i   3.5         4.0   0.2
+1    e  i0   3.5         4.0   0.8
+2    i   r   5.5         0.7   1.0
+3   i0  r0   5.5         0.7   1.0
+  from to infecting  R_0
+0    s  e         i  3.0
+1    s  e        i0  3.0
+The simulation for 5 successful realizations took 3.9620 seconds.

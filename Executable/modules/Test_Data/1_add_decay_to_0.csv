@@ -1,0 +1,5 @@
+﻿from,to,mean,dispersion,prob
+e,i,2.5,4,0.25
+e,i0,,,0.75
+i,r,5.5,0.3,
+i0,r0,5.5,0.3,
