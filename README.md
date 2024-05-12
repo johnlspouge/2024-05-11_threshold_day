@@ -30,24 +30,26 @@ The **Data/** and **Output/** directories contain these 4 subdirectories, too, f
 <br>In a long running program, the text file often indicates where a failure occurred or how long execution took.
 4. requirements.txt : contains the version numbers of the Python packages used by the program.
 
-The executables in the subdirectories of **Executable/** have the following functions, also discoverable by running the Python program with the '-h' option.
+The subdirectories of **Executable/** contain the following executables with the following purposes, also discoverable by running the Python program with the '-h' option.
 
 1. Exponent/run_ui_exponent.py :
-<br> Calculates the exponential growth lambda for SEIR model, where E and I are gamma-
+<br> Calculates the exponential growth lambda for an SEIR model where E and I are gamma-
 distributed.
 2. Extinction_Probability/run_ui_extinction_probability.py :
 <br> Calculates the extinction probability for (sufficiently simple) single-type Galton-
 Watson processes.
 3. Quantile/run_quantile_confidence_interval.py : (note the absence of the 'ui_' substring in the filename)
 <br> Calculates the quantiles of an integer distribution.
-   1. The input is a Dataframe with the arbitrary left-padding columns. After the left-padding columns, columns have headings, strings corresponding to consecutive integers. The columns underneath the headings contain counting numbers or 0. The numbers represent, e.g., the output of a Monte Carlo program that counts the realizations producing a particular integer value, e.g., a particular threshold day (see below).
-   2. The output is a Dataframe that first copies the arbitrary left-padding columns. After the left-padding columns, columns have headings corresponding to the quantiles input into the program. Each quantile (e.g., '0.025', '0.05', etc.) corresponds to 3 columns: 'left', 'sample', and 'right'.  The entries in the 'sample' column give the actual quantile in the input. The 'left' and 'right' columns give the endpoints of a bootstrapped confidence interval, to indicate the stability of the sample quantile. 
+   1. The input is a Dataframe with the arbitrary columns padding the left. After the left-padding columns, columns have headings, strings corresponding to consecutive integers. The columns underneath the headings contain counting numbers or 0. The numbers represent, e.g., the output of a Monte Carlo program that counts the realizations producing a particular integer value, e.g., a particular threshold day (see below).
+   2. The output is a Dataframe. The output copies the arbitrary left-padding columns. After the left-padding columns, columns have headings corresponding to the quantiles input into the program. Each quantile (e.g., '0.025', '0.05', etc.) corresponds to 3 columns: 'left', 'sample', and 'right'.  The entries in the 'sample' column give the actual quantile from the input. The 'left' and 'right' columns give the endpoints of a bootstrapped confidence interval (of user-entered size), to indicate the variability of the sample quantile. 
 4. Threshold/run_ui_threshold.py : 
-<br> Simulates a general (non-Markovian) superspreading epidemic model, under two restrictions: (1) the force of infection is Markovian (i.e., equivalent to a Poisson process); and (2) only stable compartments become infected (e.g., in an SIR model, without infection, an individual in the "Susceptible" compartment remains susceptible). The compartments, age-groups, etc., are otherwise arbitrary.
+<br> Simulates a general (non-Markovian) superspreading epidemic model, under two restrictions: (1) the force of infection is Markovian (i.e., equivalent to a Poisson process); and (2) only stable compartments become infected. Here, a compartment is "stable" if an individual in it does not change unless infected. In an SIR model, e.g., an individual in the "Susceptible" compartment remains susceptible unless infected. The compartments, age-groups, etc., are otherwise arbitrary.
 
-A superspreading model might, e.g., use a general gamma-distributed infectious period. If too many individuals are infected (e.g., greater than 200), an exact non-Markovian simulation becomes computationally burdensome, because each time of recovery from infection must be stored. Two possibilities can reduce the computation: (1) an option for approximating with discrete time-steps (not implemented in present programs, but in principle call set_delta(delta) in Executable/modules/jls_epidemic_infect.py, untested); and (2) an option '-w' that creates watchers for whether the number of daily infections exceeding y, a condition that can be set to terminate the program.
+**Threshold/run_ui_threshold.py**
 
-The directories contain data and an executable that calculates the threshold day with 30 or more new cases daily. It simulates directly and uses a watcher to terminate a superspreading SEIR compartmental model with imperfect ascertainment. It does not use a branching process approximation. ### Explanation of the example data in Threshold/Data/ and Threshold/Output/ ### 
+A non-Markovian simulation can be computationally expensive. A superspreading model might, e.g., use a general gamma-distributed infectious period. If too many individuals are infected (e.g., greater than 200), an exact non-Markovian simulation becomes computationally burdensome, because each individual's time of recovery from infection must be stored. Two options can reduce computation: (1) an option for approximating with discrete time-steps (not implemented in the present programs, but in principle available with the call set_delta(delta) in the file Executable/modules/jls_epidemic_infect.py); and (2) an option '-w' that creates watchers that terminate the computation when it meets a condition, e.g., if the number of daily infections exceeds y.
+
+The directories contain data and an executable that calculates the threshold day where 30 or more new cases occur daily. It simulates directly and uses a watcher to terminate a superspreading SEIR compartmental model with imperfect ascertainment. It does not use a branching process approximation. ### Explanation of the example data in Threshold/Data/ and Threshold/Output/ ### 
 
 ### The Mechanics of Simulating the Threshold Day ###
 
