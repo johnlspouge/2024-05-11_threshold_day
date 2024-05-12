@@ -93,4 +93,4 @@ The Makefile **Executable/Threshold/run_ui_threshold_make.py** specifies the out
 ### Code Verification ###
 
 1. The simulation of SIR and SEIR epidemics from a single infectious individual matched analytic formulas for extinction probabilities in branching processes.
-2. Set up a compartmental model initialized with a single I that infects by making S transit directly to R. The distribution of Rs at the end of the epidemic matched Z, the individual reproduction number.
+2. A compartmental model was initialized with a single I that infects by making S transit directly to R. The distribution of Rs at the end of the epidemic matched Z, the individual reproduction number.
