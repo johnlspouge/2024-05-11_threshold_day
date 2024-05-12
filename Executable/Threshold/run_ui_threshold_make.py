@@ -5,7 +5,7 @@ from os import system
 log = f'run_ui_threshold.log'
 
 # Explanations follow each option as a comment after '#', with (defaults) in parentheses. 
-O = ' -o ../../Output/Threshold/Final' # -o output directory
+O = ' -o ../../Output/Threshold/' # -o output directory
 F = ' -f ../../Data/Threshold/0_exposed_123.csv'
 D = ' -d ../../Data/Threshold/1_add_decay_to_' # prefix of all files used
 I = ' -i ../../Data/Threshold/2_add_infect_to_' # prefix of all files used
