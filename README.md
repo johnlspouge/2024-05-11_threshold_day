@@ -72,14 +72,23 @@ See **Executable/Threshold/**. For user convenience, its program **run_ui_thresh
 <br> The input is a DataFrame with 4 columns: 'from', 'to', 'infecting', 'R_0'. As one might expect, they specify an infection as a transit by where it starts and ends, and the infecting individual's compartment. The 'R_0' gives the average count of secondary infections from a single infecting individual in a completely susceptible population.
 <br> The program searches for all filenames (2 filenames, here) starting with the substring **2_add_infect_to_**. Each of the file provides the infections for a different simulation.
 4. **3_add_watchers_1.csv** terminates the algorithm on the threshold day with 30 or more new cases.
-**run_ui_threshold.py** has an optional input '-w'. Without a watcher, the algorithm runs to epidemic completion, but with S(0)=1.0e+06 initial susceptibles, e.g., the non-Markovian computations slow the exact Monte Carlo simulation. Although the branching process approximation remains feasible, each of the 24 exact simulations took about 1 hour, because the watcher terminated the algorithm on the day with 30 or more new cases. To explain the watcher input, the description of **3_add_watchers_1.csv** follows the explanation of watchers.
+**run_ui_threshold.py** has an optional input '-w'. Without a watcher, the algorithm runs to epidemic completion, but with S(0)=1.0e+06 initial susceptibles, e.g., the non-Markovian computations slow the exact Monte Carlo simulation. Although the branching process approximation remains feasible, each of the 24 exact simulations took about 1 hour, because the watcher terminated the algorithm on the day with 30 or more new cases. To explain the watcher input **3_add_watchers_1.csv**, a general explanation of watchers is necessary first.
 
 **Epidemic Watchers**
 
 After the heap-dictionary pops, a user can have any number of watchers examine the present compartment counts and record them. Watchers have 3 types: (1) passive; (2) active; and (3) inactive. The algorithm automatically creates 2 passive watchers, which record compartment counts at certain times: (1) 'all_times', which records at epidemic time 0 and all times after 0 when the heap-dictionary pops; and (2) 'integer_times', which records at epidemic time 0 and and each integer time after. The user can create active watchers to monitor the passive watchers for certain types of conditions, e.g., when a day has 30 or more new cases. An active watcher becomes inactive after its condition is met. The algorithm terminates when every active watcher has been inactivated. It continues to epidemic completion if all watchers are passive.
 
 4. **3_add_watchers_1.csv** terminates the algorithm on the threshold day with 30 or more new cases.
-<br>The input is a DataFrame with 5 columns, 'passive_watcher' 
+<br>The input is a DataFrame with 5 columns, 'passive_watcher', 'is_difference', 'compartments', 'eta_threshold', and 'outfile'. The DataFrame specifies the active watchers for the simulation.
+   1. The column 'passive_watcher' specifies either 'all_times' and 'integer_times', the passive watcher that the active watcher uses.
+   2. The column 'is_difference' column specifies either 1 or 0, corresponding to a condition using the difference of compartment counts or just the compartment counts themselves.
+   3. The column 'compartment' specifies which compartment counts to monitor, and it can also specify a sum of compartment counts with a '+', e.g., 'i+r' specifies the sum of infectious and recovered compartments.
+   4. The column 'eta_threshold' specifies the threshold in the condition, e.g., '29' specifies 30 or more counts.
+   5. The column 'outfile' gives the filename of the output CSV file.
+  
+Putting it all together, the example **3_add_watchers_1.csv** specifies that an active watcher terminate the algorithm when the difference ('is_difference'=1) of sum of compartment counts ('compartments=i+r) at integer times ('watcher'=integer_times) exceeds 29 ('eta_threshold'=29). It specifies the output filename 'pmfs.csv' ('outfile'=pmfs).
+
+The Makefile **Executable/Threshold/run_ui_threshold_make.py** 
 
 **Input Watcher File  for Executable/Threshold/run_ui_threshold.py**
 
