@@ -7,7 +7,7 @@ Contains 3 directories:
 
 **Executable/** contains 5 subdirectories:
 
-0. modules/ : reusable subroutines that required by the executables below.
+0. modules/ : reusable subroutines that the executables below require.
 modules/ contains a test file test_make.py.
 > python test_make.py
 
