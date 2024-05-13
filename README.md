@@ -11,7 +11,7 @@ Contains 3 directories:
 modules/ contains a test file test_make.py.
 > python test_make.py
 
-tests the installation and functionalities of the Python files. If all is well, the program exits without complaint.
+tests the installation and functionalities of the Python files in modules/. If all is well, the program exits without complaint.
 
 The remaining subdirectories contain executables with specific functions, each containing analogous files. 
 
@@ -20,12 +20,12 @@ The remaining subdirectories contain executables with specific functions, each c
 3. Quantile/
 4. Threshold/
 
-The **Data/** and **Output/** directories contain these 4 subdirectories, too, for input and output from the corresponding executables. Each subdirectory for executables generally contains 4 files, as follows. 
+The **Data/** and **Output/** directories contain these 4 subdirectories, too, so they can contain the input and output from the corresponding executables if desired. Each subdirectory for executables generally contains 4 files, as follows. 
 
 1. run_ui_[executable].py : A program built with the Python argparse package, so '-h' displays program arguments.
-<br>'-h' displays the purpose of the program (summarized below) and its arguments. 
+<br>'-h' displays the purpose of the program (also summarized below) and its arguments. 
 2. run_ui_[executable]_make.py : A Makefile that runs the program.
-<br>The Makefile therefore contains an example of the Python command to run the file, along with the input and output filenames relevant to the program, which need not be in the corresponding **Data/** and **Output/** directories. Each Makefile created an example of program usage, so examining it will yield an example of how to run the program, its arguments, and the input and output filenames for the example.
+<br>The Makefile therefore contains an example of the Python command to run the file, along with the input and output filenames relevant to the program, which need not be in the corresponding **Data/** and **Output/** directories. Each Makefile provides an example of program usage, so examining it will yield an example of how to run the program, the program arguments, and the input and output filenames for the example.
 3. run_ui_[executable].log : A plain text file of system output, sometimes blank. The file received the print statements from the Python program.
 <br>In a long running program, the text file often indicates where a failure occurred or how long execution took.
 4. requirements.txt : contains the version numbers of the Python packages used by the program.
