@@ -33,21 +33,19 @@ The **Data/** and **Output/** directories contain these 4 subdirectories, too, s
 The subdirectories of **Executable/** contain the following executables with the following purposes, also discoverable by running the Python program with the '-h' option.
 
 1. Exponent/run_ui_exponent.py :
-<br> Calculates the exponential growth lambda for an SEIR model where E and I are gamma-
-distributed.
+<br> Calculates the exponential growth lambda for an SEIR model where E and I are gamma-distributed.
 2. Extinction_Probability/run_ui_extinction_probability.py :
-<br> Calculates the extinction probability for (sufficiently simple) single-type Galton-
-Watson processes.
+<br> Calculates the extinction probability for (sufficiently simple) single-type Galton-Watson processes.
 3. Quantile/run_quantile_confidence_interval.py : (note the absence of the 'ui_' substring in the filename)
 <br> Calculates the quantiles of an integer distribution.
    1. The input is a Dataframe with the arbitrary columns padding the left. After the left-padding columns, columns have headings, strings corresponding to consecutive integers. The columns underneath the headings contain counting numbers or 0. The numbers represent, e.g., the output of a Monte Carlo program that counts the realizations producing a particular integer value, e.g., a particular threshold day (see below).
    2. The output is a Dataframe. The output copies the arbitrary left-padding columns. After the left-padding columns, columns have headings corresponding to the quantiles input into the program. Each quantile (e.g., '0.025', '0.05', etc.) corresponds to 3 columns: 'left', 'sample', and 'right'.  The entries in the 'sample' column give the actual quantile from the input. The 'left' and 'right' columns give the endpoints of a bootstrapped confidence interval (of user-entered size), to indicate the variability of the sample quantile. 
 4. Threshold/run_ui_threshold.py : 
-<br> Simulates a general (non-Markovian) superspreading epidemic model, under two restrictions: (1) the force of infection is Markovian (i.e., equivalent to a Poisson process); and (2) only stable compartments become infected. Here, a compartment is "stable" if an individual in it does not change unless infected. In an SIR model, e.g., an individual in the "Susceptible" compartment remains susceptible unless infected. The compartments, age-groups, etc., are otherwise arbitrary.
+<br> Simulates a general (non-Markovian) superspreading epidemic model, under two restrictions: (1) the force of infection is Markovian (i.e., equivalent to a Poisson process); and (2) only stable compartments become infected. Here, a compartment is _stable_ if an individual in it does not change unless infected. In an SIR model, e.g., individuals in the "Susceptible" and "Recovered" compartments remain there unless infected. The compartments, age-groups, etc., are otherwise arbitrary.
 
 **A Detailed Explanation of Threshold/run_ui_threshold.py**
 
-A non-Markovian simulation can be computationally expensive. A superspreading model might, e.g., use a general gamma-distributed infectious period. If too many individuals are infected (e.g., greater than 200), an exact non-Markovian simulation becomes computationally burdensome, because each individual's time of recovery from infection must be stored. Two options can reduce computation: (1) an option for approximating with discrete time-steps (not implemented in the present programs, but in principle available with the call set_delta(delta) in the file Executable/modules/jls_epidemic_infect.py); and (2) an option '-w' that creates watchers that terminate the computation when it meets a condition, e.g., if the number of daily infections exceeds y.
+A non-Markovian epidemic simulation can be computationally expensive. A superspreading model might, e.g., use a general gamma-distributed infectious period. If too many individuals are infected (e.g., greater than 200), an exact non-Markovian simulation becomes computationally burdensome, because each individual's time of recovery from infection must be stored separately. Two options can reduce computation: (1) an option for approximating with discrete time-steps (not implemented in the present programs, but in principle available with the call set_delta(delta) in the file Executable/modules/jls_epidemic_infect.py); and (2) an option '-w' that creates watchers that terminate the computation when it meets a condition, e.g., if the number of daily infections exceeds y.
 
 The **Threshold/** directories contain data, an executable, and output for calculating a threshold day where 30 or more new cases occur daily. It simulates a superspreading SEIR compartmental model with imperfect ascertainment exactly and uses a watcher to terminate the simulation. It does not use a branching process approximation. 
 
