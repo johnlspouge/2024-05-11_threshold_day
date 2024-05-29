@@ -1,5 +1,8 @@
 # 2024-05-11_threshold_day/
 
+**To download a single directory from a GitHub project, 
+<br>clone the project and then delete the other directories.** 
+
 Contains 3 directories:
 1. **Data/**
 2. **Executable/**
